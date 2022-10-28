@@ -1,7 +1,7 @@
 # coding=utf-8
 import unittest
-from adbui.util import Util
-from adbui.adb_ext import AdbExt
+from .adbui.util import Util
+from .adbui.adb_ext import AdbExt
 from unittest.mock import MagicMock
 
 

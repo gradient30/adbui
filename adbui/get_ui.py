@@ -7,8 +7,11 @@ from lxml import etree
 from .ocr import Ocr, TencentCloudOcr
 from lxml.etree import tostring
 
-short_keys = {'id': 'resource-id', 'class_': 'class', 'klass': 'class', 'desc': 'content-desc'}
 
+short_keys = {'id': 'resource-id', 'class_': 'class', 'klass': 'class', 'desc': 'content-desc'}
+# APPID = "1253177369"
+# SecretId = "AKIDHh3Vm2Nq9QhvyVvENZlw3787ZyMizAGJ"
+# SecretKey = "3zvhQVS2bAb4eDg2KdktX3RhFlDY1V2j"
 
 class GetUI(object):
     def __init__(self, adb_ext):
@@ -39,9 +42,9 @@ class GetUI(object):
             keys = []
         if app_id is None and secret_id is None and secret_key is None:
             # 以下为测试账号，任何人可用，但是随时都会不可用，建议自行去腾讯优图申请专属账号
-            app_id = '10126986'
-            secret_id = 'AKIDT1Ws34B98MgtvmqRIC4oQr7CBzhEPvCL'
-            secret_key = 'AAyb3KQL5d1DE4jIMF2f6PYWJvLaeXEk'
+            app_id = '1253177369'
+            secret_id = 'AKIDHh3Vm2Nq9QhvyVvENZlw3787ZyMizAGJ'
+            secret_key = '3zvhQVS2bAb4eDg2KdktX3RhFlDY1V2j'
         keys.append({'app_id': app_id, 'secret_id': secret_id, 'secret_key': secret_key})
         self.ocr = Ocr(keys)
 
@@ -185,3 +188,6 @@ class UI:
     def click(self):
         # 点击元素的中心点
         self.__adb_ext.click(self.x, self.y)
+
+t=GetUI(object)
+print(t.init_ocr())
